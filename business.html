@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DYNOVIA | Business</title>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      background: #fff
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 10
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px
+    }
+
+    .logo-main {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: #0f172a
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: .35em;
+      color: #64748b;
+      margin-top: 4px
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #475569
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #0369a1
+    }
+
+    .page-hero {
+      padding: 100px 0 70px;
+      background: linear-gradient(135deg, #eff6ff, #f8fafc)
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: .35em;
+      color: #0369a1;
+      text-transform: uppercase
+    }
+
+    .page-hero h1 {
+      margin: 14px 0 0;
+      font-size: clamp(34px, 5vw, 58px);
+      color: #0f172a
+    }
+
+    .lead {
+      max-width: 760px;
+      color: #475569;
+      font-size: 18px;
+      margin-top: 18px
+    }
+
+    section {
+      padding: 80px 0
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, .08)
+    }
+
+    .card-image {
+      height: 250px;
+      background-size: cover;
+      background-position: center
+    }
+
+    .card-body {
+      padding: 24px
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #0f172a
+    }
+
+    .card p {
+      margin: 0;
+      color: #64748b
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 34px 0;
+      margin-top: 60px
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px
+    }
+
+    @media (max-width:900px) {
+      .cards {
+        grid-template-columns: 1fr
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <div>
+        <div class="logo-main">DYNOVIA</div>
+        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+      </div>
+      <nav><a href="index.html">Top</a><a href="about.html">About Us</a><a href="business.html"
+          class="active">Business</a><a href="news.html">News</a><a href="company.html">Company</a><a
+          href="contact.html">Contact</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Business</div>
+        <h1>多様なIT課題に対応する事業領域</h1>
+        <div class="lead">ERP、開発、クラウド、インフラまで、企業の成長フェーズに応じた最適な支援を提供します。</div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cards">
+          <div class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80')">
+            </div>
+            <div class="card-body">
+              <h3>ERP Solutions</h3>
+              <p>SAP・Dynamics 365などのERP導入、要件定義、設計、開発、保守を支援します。</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80')">
+            </div>
+            <div class="card-body">
+              <h3>System Development</h3>
+              <p>業務システム、Webシステム、バックオフィス支援システムの開発を行います。</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80')">
+            </div>
+            <div class="card-body">
+              <h3>Cloud Services</h3>
+              <p>AWS、Azureを活用し、移行、設計、運用最適化まで支援します。</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80')">
+            </div>
+            <div class="card-body">
+              <h3>Infrastructure</h3>
+              <p>サーバー、ネットワーク、セキュリティ、監視基盤の設計・構築を支援します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 DYNOVIA All Rights Reserved.</div>
+      <div>Tokyo / Information Technology / System Integration</div>
+    </div>
+  </footer>
+</body>
+
+</html>

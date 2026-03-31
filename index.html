@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DYNOVIA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo-main {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #0f172a;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: #475569;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a:hover {
+      color: #0369a1;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.52), rgba(15, 23, 42, 0.38)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 110px 0 90px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: #bae6fd;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 28px 0 0;
+      font-size: 18px;
+      color: #e2e8f0;
+      max-width: 640px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0369a1;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-light {
+      background: #f8fafc;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-heading .label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: #0369a1;
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 44px);
+      color: #0f172a;
+    }
+
+    .divider {
+      width: 72px;
+      height: 1px;
+      background: #cbd5e1;
+      margin: 20px auto 0;
+    }
+
+    .greeting {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      color: #475569;
+      font-size: 17px;
+    }
+
+    .greeting p {
+      margin: 0 0 22px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    .card-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #0f172a;
+    }
+
+    .card-body p {
+      margin: 0;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .news-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      padding: 22px 28px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      font-weight: 700;
+      color: #0284c7;
+    }
+
+    .news-text {
+      color: #334155;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 420px;
+      background: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .about-text h3 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      color: #0f172a;
+    }
+
+    .about-text p {
+      margin: 0 0 16px;
+      color: #475569;
+      font-size: 16px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a, #0f4c81);
+      color: #fff;
+      border-radius: 32px;
+      padding: 56px 28px;
+    }
+
+    .cta h3 {
+      margin: 0 0 12px;
+      font-size: 34px;
+    }
+
+    .cta p {
+      margin: 0 auto 28px;
+      max-width: 680px;
+      color: #dbeafe;
+    }
+
+    .cta .btn-primary {
+      background: #fff;
+      color: #0f172a;
+    }
+
+    .cta .btn-primary:hover {
+      background: #e2e8f0;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 34px 0;
+      margin-top: 88px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero-content {
+        padding: 90px 0 70px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cta h3 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <div>
+        <div class="logo-main">DYNOVIA</div>
+        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+      </div>
+      <nav>
+        <a href="#top">Top</a>
+        <a href="about.html">About Us</a>
+        <a href="business.html">Business</a>
+        <a href="news.html">News</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Next Generation IT Partner</div>
+          <h1>先端技術で、<br>ビジネスの未来を<br>支える。</h1>
+          <p>高品質・高効率・柔軟な開発体制で、ERP、クラウド、アプリ、インフラまで一貫して支援します。企業の成長を、確かな技術力で加速させます。</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="business.html">事業内容を見る</a>
+            <a class="btn btn-secondary" href="contact.html">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="greeting">
+      <div class="container">
+        <div class="section-heading">
+          <div class="label">Greeting</div>
+          <h2>ご挨拶</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="greeting">
+          <p>私たちは、変化の速いIT業界において、お客様に最適なソリューションを提供することを使命としています。</p>
+          <p>低コスト・高品質・高効率を軸に、ERP導入、業務システム開発、クラウド構築、インフラ整備まで幅広い領域を支援します。</p>
+          <p>人と技術の力で信頼されるパートナーとなり、持続的な価値創出を実現してまいります。</p>
+          <div style="text-align:center; margin-top:30px;">
+            <a href="about.html" class="btn btn-primary">About Us 詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="business" class="section-light">
+      <div class="container">
+        <div class="section-heading">
+          <div class="label">Business</div>
+          <h2>事業情報</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>ERP Solutions</h3>
+              <p>SAP・Dynamics 365などのERP導入、設計、開発、運用支援を通じて、業務改革を加速します。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>System Development</h3>
+              <p>Java、.NET、各種フレームワークを活用した業務システム開発で、現場に最適な仕組みを構築します。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>Cloud Services</h3>
+              <p>AWS、Azure、Salesforceなどを活用し、柔軟で拡張性の高いクラウド環境を実現します。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>Embedded Systems</h3>
+              <p>車載、IoT、自動化分野に向けた組込み開発で、安定性と精度の高いソリューションを提供します。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>Mobile Apps</h3>
+              <p>iOS・Android向けアプリケーションの企画、UI設計、開発、運用までトータルに支援します。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image"
+              style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+            <div class="card-body">
+              <h3>Infrastructure</h3>
+              <p>サーバー、ネットワーク、運用基盤の設計・構築を通じて、安定したIT環境を整備します。</p>
+            </div>
+          </article>
+        </div>
+        <div style="text-align:center; margin-top:30px;">
+          <a href="business.html" class="btn btn-primary">Business 詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container">
+        <div class="section-heading">
+          <div class="label">News</div>
+          <h2>お知らせ</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="news-box">
+          <div class="news-item">
+            <div class="news-date">2026.03</div>
+            <div class="news-text">ホームページをリニューアルしました。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">2026.02</div>
+            <div class="news-text">クラウド導入支援サービスの提供範囲を拡充しました。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">2025.12</div>
+            <div class="news-text">採用情報ページを更新しました。</div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:30px;">
+          <a href="news.html" class="btn btn-primary">News 一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="section-light">
+      <div class="container about-grid">
+        <div class="about-text">
+          <div class="label"
+            style="letter-spacing:0.3em;color:#0369a1;text-transform:uppercase;font-size:13px;margin-bottom:14px;">
+            Company</div>
+          <h3>信頼されるITパートナーへ</h3>
+          <p>業務理解と技術力の両方を重視し、要件整理から設計、開発、導入、運用保守まで一貫してサポートします。</p>
+          <p>多様な業界・業務知識を活かし、単なる開発会社ではなく、事業成長を支えるパートナーとして伴走します。</p>
+          <p>お客様ごとの課題に真摯に向き合い、長期的な信頼関係を築ける体制づくりを大切にしています。</p>
+        </div>
+        <div class="about-image"></div>
+      </div>
+      <div class="container" style="text-align:center; margin-top:30px;">
+        <a href="company.html" class="btn btn-primary">Company 詳細を見る</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h3>ご相談・お問い合わせはこちら</h3>
+          <p>システム導入、開発体制の強化、クラウド移行、インフラ整備など、ITに関するご相談を幅広く承ります。</p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="mailto:info@example.com" class="btn btn-primary">Contact Us</a>
+            <a href="contact.html" class="btn btn-secondary">Contactページへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 DYNOVIA All Rights Reserved.</div>
+      <div>Tokyo / Information Technology / System Integration</div>
+    </div>
+  </footer>
+</body>
+
+</html>

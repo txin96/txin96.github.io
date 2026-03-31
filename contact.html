@@ -6,110 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DYNOVIA | Contact</title>
   <style>
-    html {
-      scroll-behavior: smooth;
+    * {
+      box-sizing: border-box
     }
 
     body {
       margin: 0;
       font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       color: #1e293b;
-      background: #ffffff;
       line-height: 1.7;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      color: #1e293b;
-      background: #ffffff;
-      line-height: 1.7;
+      background: #fff
     }
 
     a {
       text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      color: inherit
     }
 
     .container {
       width: min(1140px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .container {
-      width: min(1140px, calc(100% - 40px));
-      margin: 0 auto;
+      margin: 0 auto
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, .95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #e2e8f0;
+      z-index: 10
     }
 
     .header-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 18px 0;
-      gap: 20px;
+      gap: 20px
     }
 
     .logo-main {
       font-size: 30px;
       font-weight: 700;
-      letter-spacing: 0.2em;
-      color: #0f172a;
+      letter-spacing: .2em;
+      color: #0f172a
     }
 
     .logo-sub {
       font-size: 11px;
-      letter-spacing: 0.35em;
+      letter-spacing: .35em;
       color: #64748b;
-      margin-top: 4px;
+      margin-top: 4px
     }
 
     nav {
       display: flex;
       gap: 28px;
-      font-size: 14px;
-      color: #475569;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      font-size: 14px;
+      color: #475569
     }
 
-    nav a:hover,
-    nav a.active {
-      color: #0369a1;
-    }
-
-    .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(15, 23, 42, 0.52), rgba(15, 23, 42, 0.38)),
-        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: #fff;
-    }
-
-    @media (max-width: 720px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        gap: 16px;
-      }
+    nav a.active,
+    nav a:hover {
+      color: #0369a1
     }
 
     .page-hero {
@@ -198,6 +158,134 @@
       gap: 20px;
       flex-wrap: wrap;
       font-size: 14px
+    }
+
+    @media (max-width:900px) {
+
+      .header-inner,
+      .contact-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start
+      }
+    }
+
+    /* Mobile support patch */
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+        row-gap: 10px;
+        justify-content: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid,
+      .about-grid,
+      .cards,
+      .contact-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .row {
+        grid-template-columns: 1fr !important;
+      }
+
+      .th {
+        padding-bottom: 8px;
+      }
+
+      .td {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(1140px, calc(100% - 32px));
+      }
+
+      section {
+        padding: 64px 0 !important;
+      }
+
+      .page-hero,
+      .hero-content {
+        padding: 76px 0 56px !important;
+      }
+
+      .page-hero h1,
+      .hero h1 {
+        font-size: clamp(30px, 8vw, 44px) !important;
+        line-height: 1.2;
+      }
+
+      .lead,
+      .hero p,
+      .greeting,
+      .about-text p,
+      .card-body p,
+      .news-text,
+      .desc,
+      .td,
+      .muted {
+        font-size: 15px !important;
+      }
+
+      .hero-buttons,
+      .cta>div,
+      .contact-grid+a,
+      .cta .btn-primary,
+      .cta .btn-secondary {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 12px 22px;
+        font-size: 13px;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr !important;
+        gap: 8px;
+      }
+
+      .card-image,
+      .about-image,
+      .photo {
+        min-height: 240px;
+        height: 240px;
+      }
+
+      .panel,
+      .news-item,
+      .item,
+      .card-body,
+      .th,
+      .td {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+
+      .logo-main {
+        font-size: 26px;
+      }
+
+      .logo-sub {
+        letter-spacing: 0.25em;
+      }
     }
   </style>
 </head>

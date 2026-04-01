@@ -30,8 +30,28 @@ const COMPANY_INFO = {
 
 // Initialize company information immediately (for static HTML)
 (function() {
-  // Update page title
-  document.title = COMPANY_INFO.name;
+  // Auto-detect page and set appropriate title
+  var pageName = window.location.pathname.split('/').pop().replace('.html', '');
+  var pageTitle = COMPANY_INFO.name;
+
+  // Map page names to titles
+  var pageTitles = {
+    'about': 'About Us',
+    'business': 'Business',
+    'company': 'Company',
+    'contact': 'Contact',
+    'news': 'News',
+    'index': ''
+  };
+
+  // Set page title
+  if (pageName === '' || pageName === 'index') {
+    document.title = COMPANY_INFO.name;
+  } else if (pageTitles[pageName]) {
+    document.title = COMPANY_INFO.name + ' | ' + pageTitles[pageName];
+  } else {
+    document.title = COMPANY_INFO.name;
+  }
 
   // Update all elements with data-company attributes
   document.addEventListener('DOMContentLoaded', function() {

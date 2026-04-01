@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DYNOVIA | About Us</title>
+  <title></title>
+  <script src="company-info.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof COMPANY_INFO !== 'undefined') {
+        document.title = COMPANY_INFO.name + ' | About Us';
+      }
+    });
+  </script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -207,8 +215,8 @@
   <header>
     <div class="container header-inner">
       <div>
-        <div class="logo-main">DYNOVIA</div>
-        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+        <div class="logo-main" data-company="name"></div>
+        <div class="logo-sub" data-company="tagline"></div>
       </div>
       <nav><a href="index.html">Top</a><a href="about.html" class="active">About Us</a><a
           href="business.html">Business</a><a href="news.html">News</a><a href="company.html">Company</a><a
@@ -227,7 +235,7 @@
       <div class="container grid">
         <div>
           <h2>私たちについて</h2>
-          <p>DYNOVIAは、企業の課題解決に直結するITサービスを提供することを目的に、ERP、システム開発、クラウド、インフラ分野で幅広い支援を行っています。</p>
+          <p><span data-company="name"></span>は、企業の課題解決に直結するITサービスを提供することを目的に、ERP、システム開発、クラウド、インフラ分野で幅広い支援を行っています。</p>
           <p>単なる技術提供ではなく、現場で使われ続ける仕組みをつくることを大切にし、業務への深い理解と長期視点を持って取り組みます。</p>
         </div>
         <div class="photo"></div>
@@ -265,8 +273,8 @@
   </main>
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 DYNOVIA All Rights Reserved.</div>
-      <div>Tokyo / Information Technology / System Integration</div>
+      <div data-company="footer.copyright"></div>
+      <div data-company="footer.details"></div>
     </div>
   </footer>
 </body>

@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DYNOVIA | Company</title>
+  <title></title>
+  <script src="company-info.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof COMPANY_INFO !== 'undefined') {
+        document.title = COMPANY_INFO.name + ' | Company';
+      }
+    });
+  </script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -208,8 +216,8 @@
   <header>
     <div class="container header-inner">
       <div>
-        <div class="logo-main">DYNOVIA</div>
-        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+        <div class="logo-main" data-company="name"></div>
+        <div class="logo-sub" data-company="tagline"></div>
       </div>
       <nav><a href="index.html">Top</a><a href="about.html">About Us</a><a href="business.html">Business</a><a
           href="news.html">News</a><a href="company.html" class="active">Company</a><a href="contact.html">Contact</a>
@@ -229,7 +237,7 @@
         <div class="table">
           <div class="row">
             <div class="th">会社名</div>
-            <div class="td">DYNOVIA株式会社</div>
+            <div class="td"><span data-company="name"></span>株式会社</div>
           </div>
           <div class="row">
             <div class="th">設立</div>
@@ -249,7 +257,7 @@
           </div>
           <div class="row">
             <div class="th">お問い合わせ</div>
-            <div class="td">info@example.com</div>
+            <div class="td" data-company="contact.email"></div>
           </div>
         </div>
       </div>
@@ -257,8 +265,8 @@
   </main>
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 DYNOVIA All Rights Reserved.</div>
-      <div>Tokyo / Information Technology / System Integration</div>
+      <div data-company="footer.copyright"></div>
+      <div data-company="footer.details"></div>
     </div>
   </footer>
 </body>

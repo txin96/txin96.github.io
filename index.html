@@ -397,8 +397,8 @@
   <header>
     <div class="container header-inner">
       <div>
-        <div class="logo-main"></div>
-        <div class="logo-sub"></div>
+        <div class="logo-main" data-company="name"></div>
+        <div class="logo-sub" data-company="tagline"></div>
       </div>
       <nav>
         <a href="#top">Top</a>
@@ -415,9 +415,9 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <div class="eyebrow"></div>
-          <h1></h1>
-          <p></p>
+          <div class="eyebrow" data-company="hero.eyebrow"></div>
+          <h1 data-company="hero.title" data-company-html></h1>
+          <p data-company="hero.description"></p>
           <div class="hero-buttons">
             <a class="btn btn-primary" href="business.html">事業内容を見る</a>
             <a class="btn btn-secondary" href="contact.html">お問い合わせ</a>
@@ -564,7 +564,7 @@
           <h3>ご相談・お問い合わせはこちら</h3>
           <p>システム導入、開発体制の強化、クラウド移行、インフラ整備など、ITに関するご相談を幅広く承ります。</p>
           <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-            <a href="mailto:" class="btn btn-primary">Contact Us</a>
+            <a href="mailto:" class="btn btn-primary" data-company="contact.email">Contact Us</a>
             <a href="contact.html" class="btn btn-secondary">Contactページへ</a>
           </div>
         </div>
@@ -574,8 +574,8 @@
 
   <footer>
     <div class="container footer-inner">
-      <div></div>
-      <div></div>
+      <div data-company="footer.copyright"></div>
+      <div data-company="footer.details"></div>
     </div>
   </footer>
 </body>

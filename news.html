@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DYNOVIA | News</title>
+  <title></title>
+  <script src="company-info.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof COMPANY_INFO !== 'undefined') {
+        document.title = COMPANY_INFO.name + ' | News';
+      }
+    });
+  </script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -195,8 +203,8 @@
   <header>
     <div class="container header-inner">
       <div>
-        <div class="logo-main">DYNOVIA</div>
-        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+        <div class="logo-main" data-company="name"></div>
+        <div class="logo-sub" data-company="tagline"></div>
       </div>
       <nav><a href="index.html">Top</a><a href="about.html">About Us</a><a href="business.html">Business</a><a
           href="news.html" class="active">News</a><a href="company.html">Company</a><a href="contact.html">Contact</a>
@@ -235,8 +243,8 @@
   </main>
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 DYNOVIA All Rights Reserved.</div>
-      <div>Tokyo / Information Technology / System Integration</div>
+      <div data-company="footer.copyright"></div>
+      <div data-company="footer.details"></div>
     </div>
   </footer>
 </body>

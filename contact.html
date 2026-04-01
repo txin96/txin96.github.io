@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DYNOVIA | Contact</title>
+  <title></title>
+  <script src="company-info.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof COMPANY_INFO !== 'undefined') {
+        document.title = COMPANY_INFO.name + ' | Contact';
+      }
+    });
+  </script>
   <style>
     * {
       box-sizing: border-box
@@ -294,8 +302,8 @@
   <header>
     <div class="container header-inner">
       <div>
-        <div class="logo-main">DYNOVIA</div>
-        <div class="logo-sub">INFORMATION TECHNOLOGY COMPANY</div>
+        <div class="logo-main" data-company="name"></div>
+        <div class="logo-sub" data-company="tagline"></div>
       </div>
       <nav><a href="index.html">Top</a><a href="about.html">About Us</a><a href="business.html">Business</a><a
           href="news.html">News</a><a href="company.html">Company</a><a href="contact.html" class="active">Contact</a>
@@ -316,7 +324,7 @@
           <div class="contact-grid">
             <div class="item">
               <h3>Email</h3>
-              <div class="muted">info@example.com</div>
+              <div class="muted" data-company="contact.email"></div>
             </div>
             <div class="item">
               <h3>Business Hour</h3>
@@ -330,15 +338,15 @@
               <h3>Consultation</h3>
               <div class="muted">ERP / システム開発 / クラウド / インフラ</div>
             </div>
-          </div><a class="btn" href="mailto:info@example.com">メールで問い合わせる</a>
+          </div><a class="btn" href="mailto:" data-company="contact.email">メールで問い合わせる</a>
         </div>
       </div>
     </section>
   </main>
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 DYNOVIA All Rights Reserved.</div>
-      <div>Tokyo / Information Technology / System Integration</div>
+      <div data-company="footer.copyright"></div>
+      <div data-company="footer.details"></div>
     </div>
   </footer>
 </body>

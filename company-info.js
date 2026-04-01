@@ -33,38 +33,42 @@ const COMPANY_INFO = {
   // Update page title
   document.title = COMPANY_INFO.name;
 
-  // Update all elements with data-company attribute
+  // Update all elements with data-company attributes
   document.addEventListener('DOMContentLoaded', function() {
-    // Update logo
-    const logoMain = document.querySelector('.logo-main');
-    if (logoMain) logoMain.textContent = COMPANY_INFO.name;
+    // Find all elements with data-company attribute and populate them
+    document.querySelectorAll('[data-company]').forEach(function(element) {
+      const key = element.getAttribute('data-company');
+      const keys = key.split('.');
+      let value = COMPANY_INFO;
 
-    const logoSub = document.querySelector('.logo-sub');
-    if (logoSub) logoSub.textContent = COMPANY_INFO.tagline;
+      // Navigate nested object properties
+      for (let i = 0; i < keys.length; i++) {
+        value = value[keys[i]];
+        if (value === undefined) break;
+      }
 
-    // Update hero section
-    const eyebrow = document.querySelector('.eyebrow');
-    if (eyebrow) eyebrow.textContent = COMPANY_INFO.hero.eyebrow;
+      // Update element based on type
+      if (value !== undefined) {
+        if (element.hasAttribute('data-company-html')) {
+          element.innerHTML = value;
+        } else if (element.tagName === 'A' && element.hasAttribute('href')) {
+          // For links, update href
+          if (key === 'contact.email') {
+            element.href = 'mailto:' + value;
+          }
+        } else {
+          element.textContent = value;
+        }
+      }
+    });
 
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) heroTitle.innerHTML = COMPANY_INFO.hero.title;
-
-    const heroDescription = document.querySelector('.hero p');
-    if (heroDescription) heroDescription.textContent = COMPANY_INFO.hero.description;
-
-    // Update contact email
-    const contactEmail = document.querySelector('a[href^="mailto:"]');
-    if (contactEmail) {
-      contactEmail.href = `mailto:${COMPANY_INFO.contact.email}`;
+    // Handle special cases like footer with combined text
+    const footerCopyright = document.querySelector('[data-company="footer.copyright"]');
+    if (footerCopyright) {
+      footerCopyright.textContent = `© ${COMPANY_INFO.copyright.year} ${COMPANY_INFO.name} ${COMPANY_INFO.copyright.text}`;
     }
 
-    // Update footer
-    const footerText = document.querySelector('.footer-inner div:first-child');
-    if (footerText) {
-      footerText.textContent = `© ${COMPANY_INFO.copyright.year} ${COMPANY_INFO.name} ${COMPANY_INFO.copyright.text}`;
-    }
-
-    const footerDetails = document.querySelector('.footer-inner div:last-child');
+    const footerDetails = document.querySelector('[data-company="footer.details"]');
     if (footerDetails) {
       footerDetails.textContent = `${COMPANY_INFO.location} / ${COMPANY_INFO.industry} / ${COMPANY_INFO.businessType}`;
     }

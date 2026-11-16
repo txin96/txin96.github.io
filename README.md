@@ -120,3 +120,18 @@ Contact 表单的字段标签、输入内容和 placeholder 提示文字统一�
 - Added `preconnect` for Google Fonts hosts on all 18 pages to reduce first-visit font latency.
 - Kept fonts, font sizes, navigation, spacing, artwork, and multi-language content otherwise unchanged.
 - On slow connections the first view may use the local fallback font rather than waiting for Noto; subsequent visits can use cached Noto. No JavaScript or external build tooling required.
+
+
+## V29 お知らせ / News
+- Added company establishment and corporate website launch announcements in Japanese, English, and Simplified Chinese.
+- Site launch currently displays November 2026 (month only); confirm the actual live publication date before releasing.
+- Company establishment date is explicitly marked as pending confirmation. Replace it with the date on the corporate registry before publishing.
+- Other pages and font-loading optimizations remain unchanged from V28.
+
+
+V30: Added a homepage news preview section with two announcement excerpts and a link to the full news page in JA/EN/ZH.
+
+
+V31: Replaced establishment announcement with a business overview page announcement across the three languages. Removed homepage section numbers (not business card numbers) and reduced spacing between News and Company. Announcement month is a draft: verify actual publication date before launch.
+
+V32 — Balance News/Company spacing and distinguish Company with subtle gray background and divider on all three homepages.

@@ -218,3 +218,43 @@ html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker{font-family:Arial
 .contact .form-field textarea,
 .contact .form-field input::placeholder,
 .contact .form-field textarea::placeholder { font-size: 14px; }
+
+/* V29 — announcements, consistent with the compact internal page layout */
+.news-list{border-top:1px solid #d8e0e5;max-width:980px;margin:0 auto}
+.news-entry{display:grid;grid-template-columns:155px minmax(0,1fr);column-gap:34px;align-items:start;padding:29px 0 32px;border-bottom:1px solid #d8e0e5}
+.news-date{grid-row:1 / span 2;font:600 12px/1.8 Arial,sans-serif;letter-spacing:.08em;color:#a48664;padding-top:3px}
+.news-title{margin:0 0 9px;font-size:19px;line-height:1.6;font-weight:600;color:#10243a}
+.news-summary{margin:0;color:#60707b;font-size:14px;line-height:1.9}
+@media(max-width:760px){.news-entry{grid-template-columns:1fr;gap:5px;padding:22px 0 25px}.news-date{grid-row:auto}.news-title{font-size:17px;margin:0 0 3px}}
+
+
+/* V30 — homepage news preview section */
+.home-news .news-list{max-width:none;margin-top:22px;}
+.home-news .news-entry{padding:23px 0 25px;}
+.home-news .news-title{font-size:18px;margin:0 0 7px;}
+.home-news .news-summary{max-width:760px;}
+.home-news-actions{display:flex;justify-content:flex-end;margin-top:18px;}
+@media(max-width:760px){.home-news .news-list{margin-top:16px;}.home-news .news-entry{padding:18px 0 20px;}.home-news .news-title{font-size:17px;margin-bottom:4px;}.home-news-actions{justify-content:flex-start;margin-top:14px;}}
+
+
+/* V31 — reduce whitespace between homepage news and company profile only */
+.home-page .home-news.section-space { padding-bottom:28px; }
+.home-page .home-news + .section-space { padding-top:32px; }
+@media(max-width:760px){
+  .home-page .home-news.section-space { padding-bottom:20px; }
+  .home-page .home-news + .section-space { padding-top:24px; }
+}
+
+
+/* V32 — clear separation and balanced spacing between homepage News and Company.
+   Applies only to these two adjacent homepage sections, in JA / EN / ZH. */
+.home-page .home-news.section-space { padding-bottom: 44px; }
+.home-page .home-news + .section-space {
+  padding-top: 48px;
+  background: #f8fafb;
+  border-top: 1px solid #e1e7eb;
+}
+@media (max-width: 760px) {
+  .home-page .home-news.section-space { padding-bottom: 32px; }
+  .home-page .home-news + .section-space { padding-top: 36px; }
+}

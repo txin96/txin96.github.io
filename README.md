@@ -135,3 +135,9 @@ V30: Added a homepage news preview section with two announcement excerpts and a 
 V31: Replaced establishment announcement with a business overview page announcement across the three languages. Removed homepage section numbers (not business card numbers) and reduced spacing between News and Company. Announcement month is a draft: verify actual publication date before launch.
 
 V32 — Balance News/Company spacing and distinguish Company with subtle gray background and divider on all three homepages.
+
+V33: Removed the border between the homepage News and Company sections; retained the Company background and spacing across JA/EN/ZH.
+
+V34: Removed DISCOVER MORE from all three homepages; reduced hero bottom padding to avoid blank space.
+
+V35: Japanese and Simplified Chinese site headers show 芝浦商事 with SHIBAURA CORPORATION underneath; English remains unchanged. Logo placeholder retained.

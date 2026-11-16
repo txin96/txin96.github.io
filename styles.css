@@ -252,9 +252,21 @@ html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker{font-family:Arial
 .home-page .home-news + .section-space {
   padding-top: 48px;
   background: #f8fafb;
-  border-top: 1px solid #e1e7eb;
 }
 @media (max-width: 760px) {
   .home-page .home-news.section-space { padding-bottom: 32px; }
   .home-page .home-news + .section-space { padding-top: 36px; }
 }
+
+/* V34: Hero without generic scroll CTA; tighter bottom whitespace only on homepage. */
+.home-page .hero-content{padding-bottom:32px;}
+@media(max-width:760px){.home-page .hero-content{padding-bottom:34px;}}
+@media(max-width:390px){.home-page .hero-content{padding-bottom:30px;}}
+
+/* V35 — localized header wordmark for Japanese and Chinese pages (logo remains placeholder). */
+.brand-type.brand-local{gap:5px;letter-spacing:.06em;}
+.brand-type.brand-local strong{font-size:18px;letter-spacing:.08em;white-space:nowrap;font-weight:700;}
+.brand-type.brand-local small{font-family:Arial,Helvetica,sans-serif;font-size:8px;letter-spacing:.12em;white-space:nowrap;}
+@media(max-width:1060px){.brand-type.brand-local strong{font-size:16px}.brand-type.brand-local small{font-size:7px}}
+@media(max-width:760px){.brand-type.brand-local strong{font-size:15px}.brand-type.brand-local small{font-size:7px;letter-spacing:.07em}}
+@media(max-width:390px){.brand-type.brand-local strong{font-size:14px}.brand-type.brand-local small{font-size:6px}}

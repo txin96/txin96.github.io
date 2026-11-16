@@ -113,3 +113,10 @@ The top spacing of the Contact form section was reduced from 44px to 28px on des
 
 ## V27 更新
 Contact 表单的字段标签、输入内容和 placeholder 提示文字统一为 14px（日语、英语、中文）。不修改 Banner padding 或其他页面。
+
+
+## V28 — Stable typography during initial load
+- Changed the external Japanese webfont CSS from `font-display: swap` to `font-display: optional` so the browser does not replace already-painted text with newly loaded fonts and shift the layout.
+- Added `preconnect` for Google Fonts hosts on all 18 pages to reduce first-visit font latency.
+- Kept fonts, font sizes, navigation, spacing, artwork, and multi-language content otherwise unchanged.
+- On slow connections the first view may use the local fallback font rather than waiting for Noto; subsequent visits can use cached Noto. No JavaScript or external build tooling required.

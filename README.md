@@ -61,3 +61,55 @@ V8: Removed the standalone OUR PHILOSOPHY band from both language homepages. The
 - Company name 芝浦商事株式会社 is registered; removed incorporation-pending and provisional-name wording.
 - Chinese page titles, body, navigation, and form labels use a consistent Simplified Chinese font stack to reduce vertical glyph misalignment.
 - Official English registered name has not been verified; SHIBAURA CORPORATION is treated as a proposed English presentation name.
+
+
+## V16 language dropdown
+全站 18 个页面统一改用语言下拉菜单，显示当前语言（日本語 / English / 简体中文），展开后当前语言带勾选且不可点击，其他两项保持当前页面路径跳转。直接打开本地 HTML 或 Netlify 部署均可使用。
+
+
+## V17 language menu refinement
+Language selector style updated with reference to Mitsubishi Corporation's compact header language menu. Removed font-dependent glyph icons; a CSS chevron reliably points down when closed and up when open. All 3 languages and 18 pages keep their current-page language links.
+
+
+## V18 adjustments
+- News page: compact banner and 38px desktop / 24px mobile gap to the content, matching Business / Company.
+- Business cards: number-to-title gap reduced 14px→8px; title-to-description gap increased 18px→24px. All Japanese, English and Chinese pages use the same shared CSS.
+
+## V19 spacing update
+Business cards: BUSINESS 01 to title = 4px; title to description = 4px. Applies to Japanese, English and Chinese pages via shared styles.css.
+
+
+## V20 company page updates
+- Company profile revised in Japanese, English and Simplified Chinese.
+- Registered name: 芝浦商事株式会社. Capital: JPY 3,000,000. Head office: 2-9-1 Shibaura, Minato-ku, Tokyo 108-0023, Japan.
+- No banking information published. Incorporation date and representative omitted pending confirmation.
+- English company name appears in English company profile, not as a separate Japanese/Chinese profile row.
+
+## V21 变更
+- 三语言 Company 页面恢复成立日期、代表者占位项目（避免遗忘），不包含取引銀行。
+- 中文版地址改成「邮编108-0023 日本东京都港区芝浦2丁目9番1号」，无括号。
+
+## V22 — Contact spacing refinement
+The top spacing of the Contact form section was reduced from 44px to 28px on desktop and from 25px to 16px on mobile. Applied to Japanese, English and Simplified Chinese Contact pages via shared CSS. Other page layouts remain unchanged.
+
+## V23 Contact spacing
+- Contact page banner bottom padding: 16px (desktop/mobile).
+- Contact form section top padding: 16px (desktop/mobile).
+- Applied to Japanese, English and Chinese pages.
+
+
+## V24 updates
+- Contact banners on JA/EN/ZH now use the same compact header layout as Business, News, and Company.
+- Contact form top padding stays at 16px as requested.
+
+## V25
+- 桌面顶部导航文字由 12px 调整为 14px；窄屏下略微缩小导航间隔。手机版保持原来的 14px。
+
+## V26 更新
+- 会社概要 / Company / 公司概况：「基本情報」表格行文字统一为 14px（含移动端）。
+- お問い合わせ / Contact / 联系我们：正文 `.contact.section-space` 的 `padding-top` 设置为 `0px`（含移动端）。
+- `page-banner` 自身 padding 保持 V25 不变。
+
+
+## V27 更新
+Contact 表单的字段标签、输入内容和 placeholder 提示文字统一为 14px（日语、英语、中文）。不修改 Banner padding 或其他页面。

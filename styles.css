@@ -141,3 +141,79 @@ html[lang="zh-CN"] .company-info-heading {font-weight:600;letter-spacing:.015em;
 html[lang="zh-CN"] .hero-zh-title{line-height:1.4;}
 html[lang="zh-CN"] .brand-type,html[lang="zh-CN"] .footer-brand,
 html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker{font-family:Arial,Helvetica,sans-serif;}
+
+/* V16 — accessible native language dropdown */
+.header-actions{position:relative}
+.language-switch{position:relative;display:block;font-size:12px;line-height:1.5;z-index:101}
+.language-switch summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;white-space:nowrap;padding:9px 10px;border:1px solid transparent;color:var(--navy);font-weight:600;user-select:none}
+.language-switch summary::-webkit-details-marker{display:none}
+.language-switch summary::marker{content:""}
+.language-switch summary:hover,.language-switch[open] summary{border-color:#e1e5e8;background:#f8f9fa}
+.language-switch summary:focus-visible,.language-option:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.language-globe{font-size:18px;line-height:1;font-family:Arial,sans-serif;font-weight:400}
+.language-chevron{font-size:16px;font-weight:400;transition:transform .2s;line-height:1}
+.language-switch[open] .language-chevron{transform:rotate(180deg)}
+.language-menu{position:absolute;right:0;top:calc(100% + 5px);width:165px;display:flex;flex-direction:column;gap:2px;padding:6px;background:white;border:1px solid #e0e5e8;box-shadow:0 12px 30px rgba(10,25,40,.13)}
+.language-switch:not([open]) .language-menu{display:none}
+.language-menu .language-option{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;font-size:12px;font-weight:500;color:var(--navy);text-decoration:none;white-space:nowrap;line-height:1.4}
+.language-menu a.language-option:hover{background:#f4f5f4;color:#9d7e55}
+.language-menu .language-option.is-selected{background:#f2f3f2;color:#6b7785;cursor:default}
+.language-check{color:#ab8b61;font-size:14px}
+@media(max-width:760px){.language-switch summary{gap:5px;padding:8px 5px;font-size:11px}.language-globe{font-size:15px}.language-menu{width:150px}}
+@media(max-width:390px){.language-switch summary{font-size:10px;gap:4px;padding:7px 3px}.language-globe{font-size:13px}}
+
+/* V17 — Mitsubishi Corporation-inspired restrained language selector.
+   The chevron is CSS geometry, not a font glyph, so it stays aligned across JP/EN/ZH. */
+.language-switch summary{gap:12px;padding:9px 8px;border:0!important;background:transparent!important;font-size:12px;line-height:1.5;min-height:38px;align-items:center}
+.language-current{display:inline-block;line-height:1.5}
+.language-globe{display:none}
+.language-chevron{display:inline-block;flex:none;width:7px;height:7px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin:0 2px 4px 0;transition:transform .18s ease,margin .18s ease;line-height:normal;font-size:0}
+.language-switch[open] .language-chevron{transform:rotate(225deg);margin:4px 2px 0 0}
+.language-switch summary:hover .language-current{color:#9d7e55}
+.language-menu{top:calc(100% + 2px);width:172px;gap:0;padding:7px 0;border:1px solid #e4e8eb;box-shadow:0 10px 22px rgba(10,25,40,.1)}
+.language-menu .language-option{min-height:40px;padding:10px 17px;font-size:12px;font-weight:500}
+.language-menu .language-option.is-selected{background:transparent;color:var(--navy);font-weight:700}
+.language-menu a.language-option:hover{background:#f6f7f7}
+@media(max-width:760px){.language-switch summary{font-size:11px;gap:10px;padding:7px 5px;min-height:35px}.language-menu{width:160px}}
+
+/* V18 — Align News with Business/Company; fine tune business card hierarchy. */
+.news-content.section-space{padding-top:38px;}
+.business-card .card-number{margin-bottom:4px;}
+.business-card .business-card-body>h3 + p{margin-top:4px;}
+@media(max-width:760px){.news-content.section-space{padding-top:24px;}}
+
+/* V22 — tighten the gap between Contact page banner and form only. */
+.contact.section-space{padding-top:28px;}
+@media (max-width:760px){.contact.section-space{padding-top:16px;}}
+
+/* V24: Match Contact page banner to Business, Company, and News.
+   Keep the previously requested 16px gap above the contact content. */
+.contact.section-space{padding-top:16px;}
+@media(max-width:760px){.contact.section-space{padding-top:16px;}}
+
+/* V25: slightly larger desktop primary navigation; keep mobile navigation unchanged. */
+@media (min-width: 761px) {
+  .desktop-nav a { font-size:14px; line-height:1.5; white-space:nowrap; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .desktop-nav { gap:14px; }
+  .header-inner { gap:12px; }
+}
+
+/* V26 — Company profile table: consistent 14px text in all languages and viewports. */
+.company-data .data-row { font-size: 14px; }
+
+/* V26 — Contact content starts immediately after the shared page banner.
+   Do not modify .page-banner or .page-banner-compact padding. */
+.contact.section-space { padding-top: 0; }
+@media (max-width: 760px) {
+  .company-data .data-row { font-size: 14px; }
+  .contact.section-space { padding-top: 0; }
+}
+
+/* V27 — Contact form field labels and input hints: 14px, all languages. */
+.contact .form-field label,
+.contact .form-field input,
+.contact .form-field textarea,
+.contact .form-field input::placeholder,
+.contact .form-field textarea::placeholder { font-size: 14px; }

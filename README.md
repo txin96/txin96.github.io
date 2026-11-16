@@ -1,18 +1,48 @@
-# 芝浦商事株式会社 — 多页面企业官网 V3
+# SHIBAURA CORPORATION — V6
 
-- 日语首页 `index.html`，英语首页 `en/index.html`。日英分开，每个栏目均有独立 HTML 页面。
-- 页面：首页、About、Business、News、Company、Contact、Success。无独立隐私政策页面。
-- 保留初版的 SVG 港口与船舶主视觉、业务领域三张 SVG 图片、核心日语文案。
-- CSS 和 JavaScript 均使用相对路径，因此可直接双击本地 `index.html` 预览（如有浏览器安全限制，可启动 `python3 -m http.server 8080`）。
-- Netlify Drop：解压后将整个 `shibaura-corporate-v3` 文件夹拖入 Netlify；或上传 ZIP。
-- Netlify Forms：日文和英文分别使用 `contact-ja` / `contact-en` 表单。部署后在 Netlify Forms 中配置通知，测试真实提交。直接本地打开不会完成表单提交。
-- 公司名称、法人状态、地址等仍为示例和待确认内容，请在正式上线前核实。
-- 无外部图片依赖，网页上的 SVG 图片和背景可以离线显示。Google Fonts 使用在线字体，离线时自动回退系统字体。
+Japanese / English multi-page static corporate website.
 
-## V4 fixes
-- Header icon replaced with a visible LOGO placeholder across Japanese and English pages. No final logo or favicon assumed.
-- Homepage hero now grows with its content, so DISCOVER MORE and SCROLL remain visible on shorter screens.
+## Pages
+- Japanese: `index.html`, `business.html`, `news.html`, `company.html`, `contact.html`
+- English: corresponding files under `en/`
+- Contact submission confirmation: `success.html`, `en/success.html`
 
-## V5 updates
-- Removed the SCROLL indicator on both Japanese and English home pages.
-- Reduced the empty space below DISCOVER MORE and kept all other content and the logo placeholder.
+The independent About Us page has been removed. The company introduction remains on the homepage and `DISCOVER MORE` scrolls to that section. The hero spacing and all subpage title banners have been reduced.
+
+## Preview
+Double-click `index.html`, or run `python3 -m http.server 8080` in this directory. CSS and scripts use relative paths.
+
+## Netlify
+Drag this entire folder to Netlify Drop. Verify the company registration details and configure Netlify Forms before public launch.
+
+V7: Contact header copy simplified, duplicate body intro removed, form centered. Removed bilingual card subtitles from Japanese and English Home / Business pages.
+
+
+V8: Removed the standalone OUR PHILOSOPHY band from both language homepages. The introductory OUR APPROACH block retains company values and narrative; no separate About Us page is added.
+
+## V9 updates
+- Removed the entire OUR PERSPECTIVE / global-section block from both homepages.
+- Reduced the Contact form section top padding from the default 120px to 44px on desktop and 25px on mobile.
+
+
+## V10 adjustments
+- Reduced homepage Japanese hero headline size and hero vertical padding.
+- Reduced vertical padding on homepage sections only (desktop 120px → 70px; mobile 77px → 49px).
+- Reduced section heading spacing and home contact CTA padding.
+- Applied same layout refinements to Japanese and English homepage, keeping inner pages intact.
+
+
+## V11 updates
+- Japanese navigation uses 「お知らせ」 (already consistent in V10); English retains News.
+- Active desktop navigation uses a thin underline without border or padding, keeping all menu items on the same baseline.
+
+
+## V12 adjustments
+- Business and Company pages (JP/EN): removed duplicated large content headings.
+- The page banner title now appears once; content starts closer beneath it.
+- Company profile table is centered at a comfortable reading width.
+- Other pages, navigation, and image assets are unchanged.
+
+## V13 update
+- Company Profile: Add 「基本情報」 / "Basic Information" as a small subheading above the corporate data table, following a familiar Japanese corporate website hierarchy.
+- Retain compact banner-to-content spacing and other V12 design elements.

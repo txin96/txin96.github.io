@@ -113,3 +113,31 @@
 /* V13: Compact profile subheading above corporate information table */
 .company-info-heading{font-family:var(--serif);font-size:clamp(21px,2.2vw,27px);font-weight:500;color:var(--navy);letter-spacing:.055em;line-height:1.5;margin:0 0 22px;padding-left:15px;border-left:3px solid #b79a76;}
 @media(max-width:760px){.company-info-heading{font-size:21px;margin-bottom:16px;padding-left:12px;}}
+
+/* V14: 3-language switch and Chinese typography */
+.language-switch{white-space:nowrap;gap:7px}
+.language-switch a[lang="zh"]{font-size:11px}
+html[lang="zh-CN"] body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}
+html[lang="zh-CN"] .hero-zh-title{font-size:clamp(31px,3.5vw,51px);line-height:1.55;letter-spacing:.025em}
+@media(max-width:1050px){.desktop-nav{gap:16px}.header-inner{gap:15px}.brand{min-width:190px}.header-actions{gap:12px}}
+@media(max-width:760px){.language-switch{gap:5px;font-size:10px}html[lang="zh-CN"] .hero-zh-title{font-size:clamp(27px,6.9vw,38px);line-height:1.55}}
+@media(max-width:390px){.language-switch{gap:3px}.language-switch a[lang="zh"]{font-size:10px}}
+
+/* V15: Chinese font harmonization: headings previously inherited Japanese serif font.
+   Use a consistent Chinese glyph family and baseline for all Chinese UI text. */
+html[lang="zh-CN"]{--zh-font:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif;}
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] button,html[lang="zh-CN"] input,html[lang="zh-CN"] textarea,
+html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .section-heading h2,
+html[lang="zh-CN"] .section-header-row h2,html[lang="zh-CN"] .global-copy h2,
+html[lang="zh-CN"] .contact-intro h2,html[lang="zh-CN"] .intro-copy .lead-copy,
+html[lang="zh-CN"] .page-banner h1,html[lang="zh-CN"] .company-info-heading,
+html[lang="zh-CN"] .home-cta h2,html[lang="zh-CN"] .notice-empty h2,
+html[lang="zh-CN"] .business-card h3,html[lang="zh-CN"] .data-row,
+html[lang="zh-CN"] .desktop-nav,html[lang="zh-CN"] .mobile-nav {font-family:var(--zh-font);}
+html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-banner h1,
+html[lang="zh-CN"] .section-heading h2,html[lang="zh-CN"] .section-header-row h2,
+html[lang="zh-CN"] .company-info-heading {font-weight:600;letter-spacing:.015em;}
+html[lang="zh-CN"] .hero-zh-title{line-height:1.4;}
+html[lang="zh-CN"] .brand-type,html[lang="zh-CN"] .footer-brand,
+html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker{font-family:Arial,Helvetica,sans-serif;}

@@ -46,3 +46,18 @@ V8: Removed the standalone OUR PHILOSOPHY band from both language homepages. The
 ## V13 update
 - Company Profile: Add 「基本情報」 / "Basic Information" as a small subheading above the corporate data table, following a familiar Japanese corporate website hierarchy.
 - Retain compact banner-to-content spacing and other V12 design elements.
+
+
+## V14 中文版
+
+- 简体中文版位于 `zh/`：`index.html`、`business.html`、`news.html`、`company.html`、`contact.html`、`success.html`。
+- 页眉 JP / EN / 中文 可在对应页面互相跳转；日文仍为网站默认首页。
+- 中文咨询表单 `contact-zh` 使用 Netlify Forms，部署后须在 Netlify 控制台测试提交、启用通知。
+- 可以直接双击根目录 `index.html` 或 `zh/index.html` 本地预览样式和切换；Netlify 表单需线上测试。
+- 公司仍在筹备中，法人资料、经营范围及宣传文字上线前须再次确认。
+
+
+## V15 updates
+- Company name 芝浦商事株式会社 is registered; removed incorporation-pending and provisional-name wording.
+- Chinese page titles, body, navigation, and form labels use a consistent Simplified Chinese font stack to reduce vertical glyph misalignment.
+- Official English registered name has not been verified; SHIBAURA CORPORATION is treated as a proposed English presentation name.

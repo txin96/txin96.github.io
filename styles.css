@@ -270,3 +270,28 @@ html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker{font-family:Arial
 @media(max-width:1060px){.brand-type.brand-local strong{font-size:16px}.brand-type.brand-local small{font-size:7px}}
 @media(max-width:760px){.brand-type.brand-local strong{font-size:15px}.brand-type.brand-local small{font-size:7px;letter-spacing:.07em}}
 @media(max-width:390px){.brand-type.brand-local strong{font-size:14px}.brand-type.brand-local small{font-size:6px}}
+
+
+/* V38 — smooth vector arrow icons for Chinese UI; single SVG path, no CSS seam. */
+html[lang="zh-CN"] .ui-arrow-svg {display:inline-block;flex:none;vertical-align:-2px;overflow:visible;}
+html[lang="zh-CN"] .ui-arrow-diagonal {width:14px;height:14px;margin-left:4px;}
+html[lang="zh-CN"] .ui-arrow-up {width:16px;height:16px;vertical-align:middle;}
+
+
+/* V39 — vertically center Chinese button label + SVG as one flex row.
+   A vector is kept intact; avoid font-baseline offsets or constructing icons from CSS lines. */
+html[lang="zh-CN"] .text-button:has(> .ui-arrow-diagonal) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+html[lang="zh-CN"] .submit-button:has(> .ui-arrow-diagonal) {
+  align-items: center;
+}
+html[lang="zh-CN"] .ui-arrow-diagonal {
+  display: block;
+  flex: 0 0 14px;
+  vertical-align: initial;
+  margin-left: 0;
+}

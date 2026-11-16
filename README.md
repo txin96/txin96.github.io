@@ -141,3 +141,12 @@ V33: Removed the border between the homepage News and Company sections; retained
 V34: Removed DISCOVER MORE from all three homepages; reduced hero bottom padding to avoid blank space.
 
 V35: Japanese and Simplified Chinese site headers show 芝浦商事 with SHIBAURA CORPORATION underneath; English remains unchanged. Logo placeholder retained.
+
+
+V36: Japanese Contact form placeholder strings localized (name, email, company); Netlify honeypot text localized. CSS/layout unchanged.
+
+V37: Chinese UI arrows now use CSS-drawn icons in homepage, contact, success and back-to-top links; no font emoji substitution.
+
+V38: Replaced CSS-assembled arrows in Chinese pages with single-path inline SVG icons, including navigation actions, submit button, back-to-top. Other languages unchanged.
+
+V39: Centered Chinese text buttons and SVG diagonal arrows using flex alignment without changing icon paths or site layout.

@@ -10,8 +10,9 @@ const escape = s => s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const lines = s => escape(s).replace(/\r?\n/g,'<br>');
 const str = v => typeof v === 'string' ? v.trim() : '';
 export function prepare(payload){
- const d=payload?.data; if(!d || !Object.hasOwn(templates,payload.name)) return null;
- const t=templates[payload.name]; const n=str(d.name), c=str(d.company), e=str(d.email), m=str(d.message);
+ const d=payload?.data; const formName=payload?.form_name ?? d?.['form-name'] ?? payload?.name;
+ if(!d || !Object.hasOwn(templates,formName)) return null;
+ const t=templates[formName]; const n=str(d.name), c=str(d.company), e=str(d.email), m=str(d.message);
  if(str(d['bot-field']) || !n || n.length>100 || c.length>120 || e.length>254 || !/^[^\s@<>,;"\\]+@[^\s@<>,;"\\]+\.[^\s@<>,;"\\]+$/.test(e) || m.length<10 || m.length>5000) return null;
  const rows=t.labels.map((label,i)=>[label,[n,c,e,m][i]]).filter(([,v])=>v);
  const text=[t.greeting(n),t.intro,t.heading,...rows.map(([k,v])=>`${k}: ${v}`),t.closing,t.brand,...(t.lang==='en'?[]:['SHIBAURA CORPORATION']),t.address,`Email: ${email}`,`Web: ${website}`,t.note].join('\n\n');
@@ -20,7 +21,11 @@ export function prepare(payload){
 }
 export default async function(req){
  const {payload}=await req.json(); const body=prepare(payload);
- if(!body){console.log('Receipt skipped: unsupported or invalid submission');return new Response(null,{status:204});}
+ if(!body){
+  const d=payload?.data; const formName=payload?.form_name ?? d?.['form-name'] ?? payload?.name;
+  console.log('Receipt skipped:', JSON.stringify({hasPayload:!!payload,hasData:!!d,hasFormName:typeof payload?.form_name==='string',supportedForm:Object.hasOwn(templates,formName),hasName:!!str(d?.name),hasEmail:!!str(d?.email),messageLength:str(d?.message).length,honeypotFilled:!!str(d?.['bot-field'])}));
+  return new Response(null,{status:204});
+ }
  const key=process.env.RESEND_API_KEY;
  if(!key){console.error('Receipt disabled: RESEND_API_KEY not configured');return new Response(null,{status:204});}
  // One receipt per recipient per UTC hour, including across languages. Resend deduplicates requests for 24h.

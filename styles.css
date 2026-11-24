@@ -319,3 +319,12 @@ html[lang="zh-CN"] .ui-arrow-diagonal {
 @media (max-width:390px){
   .site-header .brand{width:126px;}
 }
+
+/* V52: Compact success pages only (JA / EN / ZH). */
+.success-content.section-space { padding-top: 32px; padding-bottom: 48px; }
+.success-content .notice-empty { padding-top: 32px; padding-bottom: 40px; }
+.success-content .notice-empty h1 { margin-top: 0; }
+@media (max-width: 767px) {
+  .success-content.section-space { padding-top: 20px; padding-bottom: 32px; }
+  .success-content .notice-empty { padding-top: 24px; padding-bottom: 28px; }
+}

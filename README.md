@@ -169,3 +169,6 @@ V45: two-line favicon with SHIBAURA above smaller CORPORATION, cropped directly 
 V46: Updated root favicon.ico and explicit 16/32px tab icons to the same two-line wordmark; versioned tab icon URLs.
 
 V47: All favicon sizes and ICO files use the original two-line navy wordmark on white.
+
+
+V48: Primary domain https://www.shibauracorp.com/. Canonical and hreflang aligned; sitemap.xml, robots.txt, WebSite/Organization JSON-LD and stable favicon references. Success pages noindex. Existing Netlify primary-domain redirect is managed in Domain management.

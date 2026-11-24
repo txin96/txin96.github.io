@@ -172,3 +172,7 @@ V47: All favicon sizes and ICO files use the original two-line navy wordmark on 
 
 
 V48: Primary domain https://www.shibauracorp.com/. Canonical and hreflang aligned; sitemap.xml, robots.txt, WebSite/Organization JSON-LD and stable favicon references. Success pages noindex. Existing Netlify primary-domain redirect is managed in Domain management.
+
+
+## V49 SEO consistency update
+Localized page titles and descriptions, unified site name, localized logo accessibility labels, and excluded temporary company values from snippets where matched. Existing favicon URLs, sitemap, styles, scripts and form behavior retained. Google controls search appearance.

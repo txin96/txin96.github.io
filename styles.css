@@ -295,3 +295,27 @@ html[lang="zh-CN"] .ui-arrow-diagonal {
   vertical-align: initial;
   margin-left: 0;
 }
+
+/* V42 — uploaded corporate wordmark replaces all header logo placeholders. */
+.site-header .brand{
+  min-width:0;
+  flex:0 0 auto;
+  width:190px;
+  display:flex;
+  align-items:center;
+}
+.site-header .brand-wordmark{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+@media (min-width:761px) and (max-width:1100px){
+  .site-header .brand{width:156px;}
+}
+@media (max-width:760px){
+  .site-header .brand{width:145px;min-width:0;}
+}
+@media (max-width:390px){
+  .site-header .brand{width:126px;}
+}

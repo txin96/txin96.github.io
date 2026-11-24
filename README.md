@@ -150,3 +150,22 @@ V37: Chinese UI arrows now use CSS-drawn icons in homepage, contact, success and
 V38: Replaced CSS-assembled arrows in Chinese pages with single-path inline SVG icons, including navigation actions, submit button, back-to-top. Other languages unchanged.
 
 V39: Centered Chinese text buttons and SVG diagonal arrows using flex alignment without changing icon paths or site layout.
+
+
+## V40 — Google Search title and site name
+Japanese homepage title is 芝浦商事株式会社. Japanese subpages use Japanese titles with the formal company name. Chinese and English pages have their own language-specific titles. All pages include Open Graph site name; the Japanese homepage includes Google WebSite structured data and all homepages have canonical URLs. Google may rewrite its search results and must recrawl after deployment.
+
+
+## V42 logo update
+Uploaded SHIBAURA CORPORATION two-line navy wordmark replaces the header LOGO placeholder and duplicate text on Japanese, English, and Chinese pages. Responsive CSS and relative asset paths support direct local preview and Netlify. An unedited original copy is included in assets.
+
+
+V43: Added branded favicon (S cropped from supplied wordmark), favicon.ico, favicon PNGs, and Apple Touch Icon to all 18 pages. SEO search favicon requires recrawling after Netlify deployment.
+
+V44: favicon改为从用户原始字标提取的完整“SHIBAURA”单词，深海军蓝背景；HTML引用保持不变。
+
+V45: two-line favicon with SHIBAURA above smaller CORPORATION, cropped directly from supplied original wordmark.
+
+V46: Updated root favicon.ico and explicit 16/32px tab icons to the same two-line wordmark; versioned tab icon URLs.
+
+V47: All favicon sizes and ICO files use the original two-line navy wordmark on white.

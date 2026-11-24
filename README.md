@@ -176,3 +176,13 @@ V48: Primary domain https://www.shibauracorp.com/. Canonical and hreflang aligne
 
 ## V49 SEO consistency update
 Localized page titles and descriptions, unified site name, localized logo accessibility labels, and excluded temporary company values from snippets where matched. Existing favicon URLs, sitemap, styles, scripts and form behavior retained. Google controls search appearance.
+
+## V50 自动回执 / Automatic inquiry receipts
+- GitHub 自动部署：将本目录内容复制到现有仓库根目录，保留 `netlify/functions/submission-created.mjs` 和 `netlify.toml`。
+- Netlify Forms 检测需开启；保留三个 contact-ja/en/zh 表单及管理员通知。
+- Resend 验证 shibauracorp.com 的 Sending 域名后，生成 Sending access API key。在 Netlify Project configuration → Environment variables 添加 `RESEND_API_KEY`，Functions scope（如界面支持），Production context。不要提交密钥到 GitHub。重新部署。
+- Netlify 的 legacy `submission-created` 事件函数接收 verified form submission；使用 Resend REST API，无 npm 依赖。
+- 同一邮箱每 UTC 小时最多一封自动回执（Resend idempotency key，24 小时窗口）；仍保留所有表单记录。限制并非全站强限流，不能阻止攻击者使用许多不同地址。建议开启 Netlify 表单反垃圾保护，监控配额；需要暂停时移除环境变量并重新部署。
+- 用户填写的信息会发送至其填写的邮箱，邮箱所有权未经预先验证，请不要提交敏感信息。Logo 采用官网 HTTPS 图片，部分邮箱默认屏蔽外部图片。
+- 测试：三个语言分别使用不同的可控收件邮箱（或不同 UTC 小时），确认后台表单记录、管理员邮件、Resend Emails 发送记录及实际收件。查看 Netlify Functions 日志；API accepted 并不等于送达。未设置 key 时仍保留表单功能，不发回执。
+- 此版本未连接实际 Netlify 或 Resend 账户进行线上测试。

@@ -186,3 +186,6 @@ Localized page titles and descriptions, unified site name, localized logo access
 - 用户填写的信息会发送至其填写的邮箱，邮箱所有权未经预先验证，请不要提交敏感信息。Logo 采用官网 HTTPS 图片，部分邮箱默认屏蔽外部图片。
 - 测试：三个语言分别使用不同的可控收件邮箱（或不同 UTC 小时），确认后台表单记录、管理员邮件、Resend Emails 发送记录及实际收件。查看 Netlify Functions 日志；API accepted 并不等于送达。未设置 key 时仍保留表单功能，不发回执。
 - 此版本未连接实际 Netlify 或 Resend 账户进行线上测试。
+
+## V54
+Success pages use the Contact banner title, one confirmation message, and a clean white layout.

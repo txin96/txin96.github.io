@@ -320,11 +320,12 @@ html[lang="zh-CN"] .ui-arrow-diagonal {
   .site-header .brand{width:126px;}
 }
 
-/* V52: Compact success pages only (JA / EN / ZH). */
-.success-content.section-space { padding-top: 32px; padding-bottom: 48px; }
-.success-content .notice-empty { padding-top: 32px; padding-bottom: 40px; }
-.success-content .notice-empty h1 { margin-top: 0; }
-@media (max-width: 767px) {
-  .success-content.section-space { padding-top: 20px; padding-bottom: 32px; }
-  .success-content .notice-empty { padding-top: 24px; padding-bottom: 28px; }
-}
+/* V54 — Success pages: consistent Contact banner, single confirmation. */
+.success-banner h1:last-child { margin-bottom: 0; }
+.success-content.section-space { padding: 54px 0 70px; }
+.success-content .notice-empty { background: transparent; border: 0; padding: 20px 20px 26px; }
+.success-content .success-mark { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border: 1px solid #b79a76; border-radius: 50%; color: #10243a; margin-bottom: 18px; }
+.success-content .notice-empty h2 { margin: 0 0 12px; }
+.success-content .notice-empty p { margin: 0; line-height: 1.9; }
+.success-content .text-button { margin-top: 26px; }
+@media(max-width:760px) { .success-content.section-space { padding: 36px 0 48px; } .success-content .notice-empty { padding: 16px 20px 20px; } .success-content .notice-empty h2 { font-size: 22px; } }

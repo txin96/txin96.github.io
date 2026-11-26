@@ -189,3 +189,11 @@ Localized page titles and descriptions, unified site name, localized logo access
 
 ## V54
 Success pages use the Contact banner title, one confirmation message, and a clean white layout.
+
+## V55 — Canonical URLs without .html
+- Source files remain ordinary HTML and can still be opened directly on a local computer.
+- Netlify now builds a separate dist directory using `node build.mjs`; published navigation, canonical URLs, Open Graph and sitemap/hreflang use extensionless paths. Netlify static routing resolves these paths to their corresponding HTML files.
+- The explicit 301 rules redirect old public .html URLs to the corresponding clean paths. Pretty URLs post-processing is disabled to avoid competing automatic normalization.
+- The three form POST actions remain unchanged, and confirmation pages remain noindex. Do not redirect their POST targets.
+- Deploy by copying the entire directory contents into the existing GitHub repository, including build.mjs and _redirects. Existing environment variables remain unchanged.
+- After deploying, confirm both old and new public URLs, language switching, and all three Netlify forms and receipts. Submit the updated sitemap and request indexing of the homepage and clean canonical URLs once.

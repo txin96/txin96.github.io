@@ -1,0 +1,16 @@
+# Legacy public URLs → canonical URLs
+/index.html / 301!
+/company.html /company 301!
+/business.html /business 301!
+/news.html /news 301!
+/contact.html /contact 301!
+/en/index.html /en/ 301!
+/en/company.html /en/company 301!
+/en/business.html /en/business 301!
+/en/news.html /en/news 301!
+/en/contact.html /en/contact 301!
+/zh/index.html /zh/ 301!
+/zh/company.html /zh/company 301!
+/zh/business.html /zh/business 301!
+/zh/news.html /zh/news 301!
+/zh/contact.html /zh/contact 301!
